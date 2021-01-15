@@ -1,0 +1,230 @@
+<html>
+<head>
+    <title>Midterm Template - Passport Form and Validator</title>
+    <script type="text/javascript">
+//
+//----------------------------------------------------------------------------
+function validatePassport() {
+
+     var passportNumber = document.myPassport.passportNumber.value;
+     var birthMonth = document.myPassport.birthMonth.value;
+     var birthDay = document.myPassport.birthDay.value;
+     var birthYear = document.myPassport.birthYear.value;
+     var lastName = document.myPassport.lastName.value;
+     var firstName = document.myPassport.firstName.value;
+     var nationality = document.myPassport.nationality.value;
+     var city = document.myPassport.city.value;
+     var country = document.myPassport.country.value;
+     var sex = document.myPassport.sex.value;
+     var experationMonth = document.myPassport.experationMonth.value;
+     var experationDay = document.myPassport.experationDay.value;
+     var experationYear = document.myPassport.experationYear.value;
+     var issueMonth = document.myPassport.issueMonth.value;
+     var issueDay = document.myPassport.issueDay.value;
+     var issueYear = document.myPassport.issueYear.value;
+
+     if (fieldEmpty ("Passport Number", passportNumber) ) { return; }
+     if (fieldEmpty ("Birth Month", birthMonth) ) { return; }
+     if (fieldEmpty ("Birth Day", birthDay) ) { return; }
+     if (fieldEmpty ("Birth Year", birthYear) ) { return; }
+     if (fieldEmpty ("Last Name", lastName) ) { return; }
+     if (fieldEmpty ("First Name", firstName) ) { return; }
+     if (fieldEmpty ("Nationality", nationality) ) { return; }
+     if (fieldEmpty ("City", city) ) { return; }
+     if (fieldEmpty ("Country", country) ) { return; }
+     if (fieldEmpty ("Sex", sex) ) { return; }
+     if (fieldEmpty ("Experation Month", experationMonth) ) { return; }
+     if (fieldEmpty ("Experation Day", experationDay) ) { return; }
+     if (fieldEmpty ("Experation Year", experationYear) ) { return; }
+     if (fieldEmpty ("Issue Month", issueMonth) ) { return; }
+     if (fieldEmpty ("Issue Day", issueDay) ) { return; }
+     if (fieldEmpty ("Issue Year", issueYear) ) { return; }
+
+
+     if (fieldAlphanumeric ( "Passport Number", passportNumber ) ) { return; }
+     if (fieldAlphanumeric ("Birth Month", birthMonth) ) { return; }
+     if (isNumber ("Birth Day", birthDay) ) { return; }
+     if (isNumber ("Birth Year", birthYear) ) { return; }
+     if (fieldAlphanumeric ("Last Name", lastName) ) { return; }
+     if (fieldAlphanumeric ("First Name", firstName) ) { return; }
+     if (fieldAlphanumeric ("Nationality", nationality) ) { return; }
+     if (fieldAlphanumeric ("City", city) ) { return; }
+     if (fieldAlphanumeric ("Country", country) ) { return; }
+     if (fieldAlphanumeric ("Sex", sex) ) { return; }
+     if (fieldAlphanumeric ("Experation Month", experationMonth) ) { return; }
+     if (isNumber ("Experation Day", experationDay) ) { return; }
+     if (isNumber ("Experation Year", experationYear) ) { return; }
+     if (fieldAlphanumeric ("Issue Month", issueMonth) ) { return; }
+     if (isNumber ("Issue Day", issueDay) ) { return; }
+     if (isNumber ("Issue Year", issueYear) ) { return; }
+
+     alert ("Passport Information is Valid");
+
+     return 0;
+
+}
+
+
+function fieldAlphanumeric (fieldName, fieldValue){
+
+   var msg =" must contain only letters and numbers";
+
+
+   if ( /[^A-Za-z0-9]/.test(fieldValue) ) {
+       alert (fieldName + (msg));
+       return 1;
+   }
+   else  {
+       return 0;
+   }
+}
+
+function fieldEmpty (fieldName, fieldValue) {
+
+  var msg=" is a required field";
+
+  if(fieldValue == "") {
+     alert (fieldName +(msg));
+     return 1;
+  }
+  else {
+     return 0;
+  }
+
+}
+
+
+function isNumber (fieldName, fieldValue) {
+
+  var msg=" must contain numbers";
+
+  if(isNaN(fieldValue)) {
+     return 0;
+  }
+  else {
+    alert (fieldName +(msg));
+     return 1;
+  }
+
+}
+
+    </script>
+</head>
+<body>
+    <h1>myPassport Form Validator</h1>
+
+
+    <form name="myPassport">
+        <table>
+            <tr>
+                <td>Passport Number:</td>
+                <td><input type="text" name="passportNumber" /></td>
+            </tr>
+
+            <td>Date of Birth (Month, Day, Year):</td>
+            <td>
+                <select name="birthMonth">
+                    <option value="january"> January </option>
+                    <option value="february"> February </option>
+                    <option value="march"> March </option>
+                    <option value="april"> April </option>
+                    <option value="may"> May </option>
+                    <option value="june"> June </option>
+                    <option value="july"> July </option>
+                    <option value="august"> August </option>
+                    <option value="september"> September </option>
+                    <option value="october"> October </option>
+                    <option value="november"> November </option>
+                    <option value="december"> December </option>
+                    <input type="text" name="birthDay" maxlength="2" size="1" />
+                    <input type="text" name="birthYear" maxlength="4" size="2" />
+                </select>
+            </td>
+
+
+            <tr>
+                <td>Last and First Name:</td>
+                <td>
+                    <input type="text" name="lastName" maxlength="15" size="10" />
+                    <input type="text" name="firstName" maxlength="15" size="10" />
+                </td>
+            </tr>
+
+            <td>Nationality:</td>
+            <td><input type="text" name="nationality" maxlength="20" size="25" /></td>
+
+            <tr>
+                <td>Place of Birth (City, Country):</td>
+
+                <td>
+                    <input type="text" name="city" maxlength="15" size="10" />
+                    <input type="text" name="country" maxlength="15" size="10" />
+                </td>
+            </tr>
+
+            <td>Sex:</td>
+            <td>
+                <select name="sex">
+                    <option value="male"> Male </option>
+                    <option value="female"> Female </option>
+                </select>
+            </td>
+
+            <tr>
+                <td>Experation Date (Month, Day, Year):</td>
+                <td>
+                    <select name="experationMonth">
+                        <option value="january"> January </option>
+                        <option value="february"> February </option>
+                        <option value="march"> March </option>
+                        <option value="april"> April </option>
+                        <option value="may"> May </option>
+                        <option value="june"> June </option>
+                        <option value="july"> July </option>
+                        <option value="august"> August </option>
+                        <option value="september"> September </option>
+                        <option value="october"> October </option>
+                        <option value="november"> November </option>
+                        <option value="december"> December </option>
+                        <input type="text" name="experationDay" maxlength="2" size="1" />
+                        <input type="text" name="experationYear" maxlength="4" size="2" />
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Issue Date (Month, Day, Year):</td>
+                <td>
+                    <select name="issueMonth">
+                        <option value="january"> January </option>
+                        <option value="february"> February </option>
+                        <option value="march"> March </option>
+                        <option value="april"> April </option>
+                        <option value="may"> May </option>
+                        <option value="june"> June </option>
+                        <option value="july"> July </option>
+                        <option value="august"> August </option>
+                        <option value="september"> September </option>
+                        <option value="october"> October </option>
+                        <option value="november"> November </option>
+                        <option value="december"> December </option>
+                        <input type="text" name="issueDay" maxlength="2" size="1" />
+                        <input type="text" name="issueYear" maxlength="4" size="2" />
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td><input type="button" value="Validate" onclick="validatePassport();" /> <input type="button" value="CE" onclick="document.myPassport.reset();" /></td>
+
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
+
+
+

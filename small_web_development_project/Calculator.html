@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>Gross Pay Calculator</title>
+<script type="text/javascript">
+
+var employee = new Array(5);
+var i=0
+for (i=0; i<5; i++)
+{
+    employee[i]= new Array(2);
+}
+
+employee[0][0]="098401";
+employee[0][1]="Connie Cobol";
+employee[1][0]="526488";
+employee[1][1]="Mary Apl";
+employee[2][0]="765349";
+employee[2][1]="Frank Fortran";
+employee[3][0]="034645";
+employee[3][1]="Jeff Ada";
+employee[4][0]="127615";
+employee[4][1]="Anton Pascal";
+
+var otpf_min = 1.5;
+var otpf_max = 2.0;
+
+function calculateGrossPay() {
+
+
+if (fieldEmpty("Clock #",document.gpc.clock.value)) { return; }
+
+if (fieldEmpty("Wage",document.gpc.wage.value)) { return; }
+
+if (fieldEmpty("Hours",document.gpc.hours.value)) { return; }
+
+if (fieldEmpty("OT",document.gpc.ot.value)) { return; }
+
+if (fieldEmpty("OT Pay Factor",document.gpc.otpf.value)) { return; }
+
+if(fieldEmpty("Service",document.gpc.service.value)) { return; }
+
+var employee_name = validClockNumber();
+
+if (employee_name == "") {
+    alert ("Please enter a valid Clock Number");
+    return;
+}
+
+var wage = document.gpc.wage.value;
+
+if (isNaN(wage)) {
+    alert ("Please enter a valid wage");
+    return;
+}
+
+var hours = document.gpc.hours.value;
+
+if (isNaN(hours)) {
+    alert ("Please enter a valid hours");
+    return;
+}        
+var ot = document.gpc.ot.value;
+
+if (isNaN(ot)) {
+    alert ("Please enter a valid OverTime");
+    return;
+}
+
+if (hours <= 40) {  
+    document.gpc.ot.value=0.00;
+    document.gpc.otpf.value=0.00;
+    ot = 0.00;
+}
+
+var otpf = document.gpc.otpf.value;
+
+if (isNaN(otpf)) {
+    alert ("Please enter a valid OverTime Factor");
+    return;
+}
+var service = document.gpc.service.value;
+
+if (isNaN(service)) {
+    alert("Please enter a valid Service");
+    return;
+}
+
+        
+if (otpf != 0.0) {
+    if (otpf != otpf_max) {
+        if (otpf != otpf_min) {
+            alert ("Please enter a valid Overtime Pay Factor of 1.5 or 2.0");
+            return;
+        }
+    }
+}
+
+gross_pay = (hours-ot) * wage + (ot * otpf * wage);
+
+document.getElementById("employee_name").innerHTML = employee_name;
+
+document.getElementById("gpvalue").innerHTML = "$ " + gross_pay.toFixed(2);
+
+document.getElementById("service_year").innerHTML = service ;
+
+}
+
+function fieldEmpty(fieldName,fieldValue) {
+var msg=" is a required field";
+
+if (fieldValue == "") {
+    alert (fieldName +(msg));
+    return 1;
+    } 
+else {
+    return 0;
+    }
+
+} 
+
+function validClockNumber() {
+
+var c = 0;
+var cindex = (-1);
+
+var clockNumber=document.gpc.clock.value;
+
+for (c=0; c<5; c++) {
+    if (clockNumber == employee[c][0])
+        cindex = c;
+}
+
+if (cindex != (-1))
+    return employee[cindex][1];
+
+return "";
+
+} 
+
+
+</script>
+</head>
+<body>
+<h1>Gross Pay Calculator</h1>
+<form name="gpc">
+<table>
+<tr>
+    <td>Clock #:</td>
+    <td><input type="text" name="clock" /></td>
+
+</tr>
+<tr>
+    <td>Wage:</td>
+    <td><input type="text" name="wage" /></td>
+</tr>
+<tr>
+    <td>Hours:</td>
+    <td><input type="text" name="hours" /></td>
+</tr>
+<tr>
+    <td>OT:</td>
+    <td><input type="text" name="ot" /></td>
+</tr>
+<tr>
+    <td>OT Pay Factor:</td>
+    <td><input type="text" name="otpf" /></td>
+</tr>
+<tr>
+    <td>Service:</td>
+    <td><input type="text" name="service" /></td>
+</tr>
+<tr>
+    <td> </td>
+    <td><input type="button" value="Calculate" onclick="calculateGrossPay();" /> 
+    <input type="button" value="CE" onclick="document.gpc.reset();" /></td>
+
+</tr>
+<tr><td colspan=2><hr></td>
+<tr>
+    <td><div id="employee_name"></div>Gross Pay:</td>
+    <td><div id="gpvalue">0.00</div></td>
+    <td><div id="service_year_of_employee"></div>Service Year:</td>
+    <td><div id="service_year">00</div></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+

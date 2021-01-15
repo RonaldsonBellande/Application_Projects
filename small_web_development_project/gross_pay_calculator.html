@@ -1,0 +1,77 @@
+<html>
+
+ <head>
+  <title>Gross Pay Calculator</title>
+  <h1>Gross Pay Calculator</h1>
+  <script src="Calculate_Gross_Pay.js">
+  </script>
+ </head>
+
+ <body>
+  <form>
+   <table>
+
+   <tr style="background-color:lightblue;">
+     <td>Wage:</td><td><input name="wage" type="text" id="wage" value ="0"></td>
+     <td>What is your wage doing all the years you have been working</td>
+     <td><input name="selectWages" type="checkbox" value="15">$15 dollar/h</td>
+     <td><input name="selectWages" type="checkbox" value="30">$20 dollar/h</td>
+     <td><input name="selectWages" type="checkbox" value="45">$45 dollar/h</td>
+     <td><input name="selectWages" type="checkbox" value="60">$60 dollar/h</td>
+   </tr>
+   <tr style="background-color:lightblue;">
+     <td>Hours:</td><td><input name="hours" type="text" id="hours" value ="0"></td>
+     <td>How many hours have you worked during each day of the week for all the years you have worked</td>
+     <td><input name="selectHours" type="radio" value="15">15 hours+</td>
+     <td><input name="selectHours" type="radio" value="30">20 hours+</td>
+     <td><input name="selectHours" type="radio" value="45">45 hours+</td>
+     <td><input name="selectHours" type="radio" value="60">60 hours+</td>
+   </tr>
+   <tr style="background-color:lightblue;">
+     <td>OT:</td><td><input name="overTime" type="text" id="overTime" value ="0"></td>
+     <td>How Much Overtime do you need this week</td>
+     <td><select name="overTime">
+     <option value="5"> 5 Hours </option>
+     <option value="10"> 10 Hours </option>
+     <option value="15"> 15 Hours </option>
+     <option value="20"> 20 Hours </option>
+   </tr>
+   <tr style="background-color: lightblue;">
+     <td>OT Pay Factor:</td><td><input name="overTimePayFactor" type="text"  id="overTimePayFactor" value ="0"></td>
+     <td>How much more money do you want when you work overtime</td><td><input name="moreMoney" type="text" id="moreMoney" value="0"></td>
+   </tr>
+   <tr>
+     <td><td><input type="button" id="Calc" value="calculate" onclick="Calculate_Gross_Pay()">
+    </td></td>
+   </tr>
+
+   <td><hr></td><td><hr></td>
+
+   <tr style="background-color:lightblue;">
+    <td>Gross:</td><td><input name="Gross" type="text" id="Gross" value="0"></td>
+    <td>How much you like the Job from 1-5 </td>
+    <td><textarea rows="2" cols="40"></textarea>
+   </tr>
+
+   <script type="text/javascript">
+     "use strict"
+     function Calculate_Gross_Pay(){
+     var wage = document.getElementById("wage").value;
+     wage = parseFloat(wage);
+     var hours = document.getElementById("hours").value;
+     hours = parseFloat(hours);
+     var overTime = document.getElementById("overTime").value;
+     overTime = parseFloat(overTime);
+     var overTimePayFactor = document.getElementById("overTimePayFactor").value;
+     overTimePayFactor = parseFloat(overTimePayFactor);
+     var total = ((wage * hours) + (overTimePayFactor * overTime));
+     alert('Total amount:' + total);
+     document.getElementById("Gross").value = total;
+     }
+     </script>
+
+   </table>
+  </form>
+
+ </body>
+</html>

@@ -1,0 +1,276 @@
+<html>
+<head>
+    <title>Book Form and Validator</title>
+    <script type="text/javascript">
+
+function validateBook() {
+
+
+     var bookName = document.myBook.bookName.value;
+     var publishMonth = document.myBook.publishMonth.value;
+     var publishDay = document.myBook.publishDay.value;
+     var publishYear = document.myBook.publishYear.value;
+     var authorLastName = document.myBook.authorLastName.value;
+     var authorFirstName = document.myBook.authorFirstName.value;
+     var publishCity = document.myBook.publishCity.value;
+     var publishCountry = document.myBook.publishCountry.value;
+     var bookCost = document.myBook.bookCost.value;
+     var authorBirthMonth = document.myBook.authorBirthMonth.value;
+     var authorBirthDay = document.myBook.authorBirthDay.value;
+     var authorBirthYear = document.myBook.authorBirthYear.value;
+     var sponsoredPublisherName = document.myBook.sponsoredPublisherName.value;
+     var authorCity = document.myBook.authorCity.value;
+     var authorCountry = document.myBook.authorCountry.value;
+     var founderLastName = document.myBook.founderLastName.value;
+     var founderFirstName = document.myBook.founderFirstName.value;
+     var foundedMonth = document.myBook.foundedMonth.value;
+     var foundedDay = document.myBook.foundedDay.value;
+     var foundedYear = document.myBook.foundedYear.value;
+
+
+     if (fieldEmpty ("Book Number", bookName) ) { return; }
+     if (fieldEmpty ("Publish Month", publishMonth) ) { return; }
+     if (fieldEmpty ("Publish Day", publishDay) ) { return; }
+     if (fieldEmpty ("Publish Year", publishYear) ) { return; }
+     if (fieldEmpty ("Author Last Name", authorLastName) ) { return; }
+     if (fieldEmpty ("Author First Name", authorFirstName) ) { return; }
+     if (fieldEmpty ("Publish City", publishCity) ) { return; }
+     if (fieldEmpty ("Publish Country", publishCountry) ) { return; }
+     if (fieldEmpty ("Book Cost", bookCost) ) { return; }
+     if (fieldEmpty ("Author Birth Month", authorBirthMonth) ) { return; }
+     if (fieldEmpty ("Author Birth Day", authorBirthDay) ) { return; }
+     if (fieldEmpty ("Author Birth Year", authorBirthYear) ) { return; }
+     if (fieldEmpty ("Publisher Name", sponsoredPublisherName) ) {return; }
+     if (fieldEmpty ("Author City", authorCity) ) { return; }
+     if (fieldEmpty ("Author Country", authorCountry) ) { return; }
+     if (fieldEmpty ("Founder Last Name", founderLastName) ) { return; }
+     if (fieldEmpty ("Founder First Name", founderFirstName) ) { return; }
+     if (fieldEmpty ("Founded Month", foundedMonth) ) { return; }
+     if (fieldEmpty ("Founded Day", foundedDay) ) { return; }
+     if (fieldEmpty ("Founded Year", foundedYear) ) { return; }
+
+
+     if (fieldAlphanumeric ( "Book Number", bookName ) ) { return; }
+     if (fieldAlphanumeric ("Publish Month", publishMonth) ) { return; }
+     if (isNumber ("Publish Day", publishDay) ) { return; }
+     if (isNumber ("Publish Year", publishYear) ) { return; }
+     if (fieldAlphanumeric ("Last Name", authorLastName) ) { return; }
+     if (fieldAlphanumeric ("First Name", authorFirstName) ) { return; }
+     if (fieldAlphanumeric ("PublishCity", publishCity) ) { return; }
+     if (fieldAlphanumeric ("PublishCountry", publishCountry) ) { return; }
+     if (isNumber ("BookCost", bookCost) ) { return; }
+     if (fieldAlphanumeric ("Author Birth Month", authorBirthMonth) ) { return; }
+     if (isNumber ("Author Birth Day", authorBirthDay) ) { return; }
+     if (isNumber ("Author Birth Year", authorBirthYear) ) { return; }
+     if (fieldAlphanumeric ("Publisher Name", sponsoredPublisherName) ) {return; }
+     if (fieldAlphanumeric ("Author City", authorCity) ) { return; }
+     if (fieldAlphanumeric ("Author Country", authorCountry) ) { return; }
+     if (fieldAlphanumeric ("Founder Last Name", founderLastName) ) { return; }
+     if (fieldAlphanumeric ("Founder First Name", founderFirstName) ) { return; }
+     if (fieldAlphanumeric ("Founded Month", foundedMonth) ) { return; }
+     if (isNumber ("Founded Day", foundedDay) ) { return; }
+     if (isNumber ("Founded Year", foundedYear) ) { return; }
+
+
+     alert ("Book Information is Valid");
+
+     return 0; 
+
+}
+
+
+function fieldAlphanumeric (fieldName, fieldValue){
+
+   var msg =" must contain only letters and numbers";
+
+
+   if ( /[^A-Za-z0-9]/.test(fieldValue) ) {
+       alert (fieldName + (msg));
+       return 1;
+   }
+   else  {
+       return 0; 
+   }
+}
+
+
+
+function fieldEmpty (fieldName, fieldValue) {
+
+  var msg=" is a required field";
+
+  if(fieldValue == "") {
+     alert (fieldName +(msg));
+     return 1;
+  }
+  else {
+     return 0;
+  }
+
+}
+
+function isNumber (fieldName, fieldValue) {
+
+  var msg=" must contain numbers";
+
+  if(isNaN(fieldValue)) {
+     alert (fieldName +(msg));
+     return 1;
+  }
+  else {
+    return 0;
+  }
+
+}
+
+    </script>
+<style type="text/css">
+
+label {
+  background-color:;
+  color: red;
+}
+  </style>
+</head>
+<body>
+    <h1>myBook Form Validator</h1>
+
+
+    <form name="myBook">
+        <table>
+            <tr >
+                <td><label>Book Name:<sup>*...</sup><label></td>
+                <td><input type="text" name="bookName" /></td>
+            </tr>
+            
+            <tr>
+            <td><label>Published Date (Month, Day, Year):<sup>*...</sup></label></td>
+            <td>
+                <select name="publishMonth">
+                    <option value="january"> January </option>
+                    <option value="february"> February </option>
+                    <option value="march"> March </option>
+                    <option value="april"> April </option>
+                    <option value="may"> May </option>
+                    <option value="june"> June </option>
+                    <option value="july"> July </option>
+                    <option value="august"> August </option>
+                    <option value="september"> September </option>
+                    <option value="october"> October </option>
+                    <option value="november"> November </option>
+                    <option value="december"> December </option>
+                    <input type="text" name="publishDay" maxlength="2" size="1" />
+                    <input type="text" name="publishYear" maxlength="4" size="2" />
+            	</select>
+            </td>
+            </tr>
+
+            <tr>
+                <td><label> Author's Last and First Name:<sup>*...</sup></label></td>
+                <td>
+                    <input type="text" name="authorLastName" maxlength="15" size="10" />
+                    <input type="text" name="authorFirstName" maxlength="15" size="10" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label>Published(City, Country):<sup>*...</sup></label></td>
+                
+                <td>
+                    <input type="text" name="publishCity" maxlength="15" size="10" />
+                    <input type="text" name="publishCountry" maxlength="15" size="10" />
+                </td>  
+            </tr>
+            
+            <td><label>Book Cost:<sup>*...</sup></label></td>
+            <td>
+                <select name="bookCost">
+                    <option value="10"> $10 </option>
+                    <option value="20"> $20 </option>
+		    <option value="30"> $30 </option>
+                    <option value="40"> $40 </option>
+		    <option value="50"> $50 </option>
+                    <option value="60"> $60 </option>
+            </select>
+            </td>
+
+	    <tr>
+                <td><label>Publisher Name:<sup>*...</sup></label></td>
+                <td><input type="text" name="sponsoredPublisherName" /></td>
+            </tr>
+
+            <tr>
+                <td><label>Author Birthdate (Month, Day, Year):<sup>*...</sup></label></td>
+                <td>
+                    <select name="authorBirthMonth">
+                        <option value="january"> January </option>
+                        <option value="february"> February </option>
+                        <option value="march"> March </option>
+                        <option value="april"> April </option>
+                        <option value="may"> May </option>
+                        <option value="june"> June </option>
+                        <option value="july"> July </option>
+                        <option value="august"> August </option>
+                        <option value="september"> September </option>
+                        <option value="october"> October </option>
+                        <option value="november"> November </option>
+                        <option value="december"> December </option>
+                        <input type="text" name="authorBirthDay" maxlength="2" size="1" />
+                        <input type="text" name="authorBirthYear" maxlength="4" size="2" />
+                     </select>
+                </td>
+             </tr>
+
+             <tr>
+                <td><label>Author Birth Place(City, Country):<sup>*...</sup></label></td>
+                
+                <td>
+                    <input type="text" name="authorCity" maxlength="15" size="10" />
+                    <input type="text" name="authorCountry" maxlength="15" size="10" />
+                </td>  
+            </tr>
+
+            <tr>
+                <td><label> Founder's Last and First Name:<sup>*...</sup></label></td>
+                <td>
+                    <input type="text" name="founderLastName" maxlength="15" size="10" />
+                    <input type="text" name="founderFirstName" maxlength="15" size="10" />
+                </td>
+            </tr>
+            
+            <tr>
+            <td><label>Founded Date (Month, Day, Year):<sup>*...</sup></label></td>
+            <td>
+                <select name="foundedMonth">
+                    <option value="january"> January </option>
+                    <option value="february"> February </option>
+                    <option value="march"> March </option>
+                    <option value="april"> April </option>
+                    <option value="may"> May </option>
+                    <option value="june"> June </option>
+                    <option value="july"> July </option>
+                    <option value="august"> August </option>
+                    <option value="september"> September </option>
+                    <option value="october"> October </option>
+                    <option value="november"> November </option>
+                    <option value="december"> December </option>
+                    <input type="text" name="foundedDay" maxlength="2" size="1" />
+                    <input type="text" name="foundedYear" maxlength="4" size="2" />
+            </select>
+            </td>
+            </tr>
+            
+            <tr>
+                <td> </td>
+                <td><input type="button" value="Validate" onclick="validateBook();" /> <input type="button" value="CE" onclick="document.myBook.reset();" /></td>
+
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
+
+
+

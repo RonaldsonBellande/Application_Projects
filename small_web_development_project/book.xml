@@ -1,0 +1,212 @@
+<books>
+<book>
+	<author>
+		<birthDate>
+			<month>December</month>
+			<day>3</day>
+			<year>1942</year>
+		</birthDate>
+		<authorBirthPlace>
+			<city>Boston</city>
+			<country>United State</country>
+		</authorBirthPlace>
+	</author>
+        <publisher>
+                <foundedDate>
+			<month>January</month>
+			<day>1</day>
+			<year>1972</year>
+		</foundedDate>
+		<founderName>
+			<firstName>Kirk</firstName>
+			<lastName>Howard</lastName>
+		</founderName>
+	</publisher>
+	<bookInfo>
+		<bookName>The Polished Hoe: A Novel</bookName>
+		<publishDate>
+			<month>May </month>
+			<day>25</day>
+			<year>2004</year>
+		</publishDate>
+		<authorName>
+			<firstName>Austin</firstName>
+			<lastName>Clarke</lastName>
+		</authorName>
+		<publisherName>Dundurn Press</publisherName>
+		<countryPublished>
+			<city>Toronto</city>
+			<country>Canada</country>
+		</countryPublished>
+		<bookCost>10</bookCost>
+	</bookInfo>
+</book>
+<book>
+	<author>
+		<birthDate>
+			<month>December</month>
+			<day>7</day>
+			<year>1962</year>
+		</birthDate>
+		<authorBirthPlace>
+			<city>New York</city>
+			<country>United State</country>
+		</authorBirthPlace>
+	</author>
+        <publisher>
+		<foundedDate>
+			<month>July</month>
+			<day>5</day>
+			<year>1994</year>
+		</foundedDate>
+		<founderName>
+			<firstName>Jeff</firstName>
+			<lastName>Bezos</lastName>
+		</founderName>
+	</publisher>
+	<bookInfo>
+		<bookName>The Quiet Mind</bookName>
+		<publishDate>
+			<month>September</month>
+			<day>9</day>
+			<year>2008</year>
+		</publishDate>
+		<authorName>
+			<firstName>White</firstName>
+			<lastName>Eagle</lastName>
+		</authorName>
+		<publisherName>Amazon</publisherName>
+		<countryPublished>
+			<city>Seattle</city>
+			<country>Washington</country>
+		</countryPublished>
+		<bookCost>5</bookCost>
+	</bookInfo>
+</book>
+<book>
+	<author>
+		<birthDate>
+			<month>December</month>
+			<day>7</day>
+			<year>1962</year>
+		</birthDate>
+		<authorBirthPlace>
+			<city>New York</city>
+			<country>United State</country>
+		</authorBirthPlace>
+	</author>
+        <publisher>
+		<foundedDate>
+			<month>July</month>
+			<day>5</day>
+			<year>1994</year>
+		</foundedDate>
+		<founderName>
+			<firstName>Jeff</firstName>
+			<lastName>Bezos</lastName>
+		</founderName>
+	</publisher>
+	<bookInfo>
+		<bookName>The Tehran Initiative</bookName>
+		<publishDate>
+			<month>May</month>
+			<day>1</day>
+			<year>2012</year>
+		</publishDate>
+		<authorName>
+			<firstName>White</firstName>
+			<lastName>Eagle</lastName>
+		</authorName>
+		<publisherName>Amazon</publisherName>
+		<countryPublished>
+			<city>Seattle</city>
+			<country>Washington</country>
+		</countryPublished>
+		<bookCost>10</bookCost>
+	</bookInfo>
+</book>
+<book>
+	<author>
+		<birthDate>
+			<month>December</month>
+			<day>7</day>
+			<year>1962</year>
+		</birthDate>
+		<authorBirthPlace>
+			<city>New York</city>
+			<country>United State</country>
+		</authorBirthPlace>
+	</author>
+        <publisher>
+		<foundedDate>
+			<month>July</month>
+			<day>5</day>
+			<year>1994</year>
+		</foundedDate>
+		<founderName>
+			<firstName>Jeff</firstName>
+			<lastName>Bezos</lastName>
+		</founderName>
+	</publisher>
+	<bookInfo>
+		<bookName>Eyes Open: Looking for the Twelve</bookName>
+		<publishDate>
+			<month>March</month>
+			<day>29</day>
+			<year>2014</year>
+		</publishDate>
+		<authorName>
+			<firstName>White</firstName>
+			<lastName>Eagle</lastName>
+		</authorName>
+		<publisherName>Amazon</publisherName>
+		<countryPublished>
+			<city>Seattle</city>
+			<country>Washington</country>
+		</countryPublished>
+		<bookCost>15</bookCost>
+	</bookInfo>
+</book>
+<book>
+	<author>
+		<birthDate>
+			<month>December</month>
+			<day>3</day>
+			<year>1942</year>
+		</birthDate>
+		<authorBirthPlace>
+			<city>Boston</city>
+			<country>United State</country>
+		</authorBirthPlace>
+	</author>
+        <publisher>
+                <foundedDate>
+			<month>January</month>
+			<day>1</day>
+			<year>1972</year>
+		</foundedDate>
+		<founderName>
+			<firstName>Kirk</firstName>
+			<lastName>Howard</lastName>
+		</founderName>
+	</publisher>
+	<bookInfo>
+		<bookName>Pig Tails 'n' Breadfruit</bookName>
+		<publishDate>
+			<month>July</month>
+			<day>2</day>
+			<year>2014</year>
+		</publishDate>
+		<authorName>
+			<firstName>Austin</firstName>
+			<lastName>Clarke</lastName>
+		</authorName>
+		<publisherName>Dundurn Press</publisherName>
+		<countryPublished>
+			<city>Toronto</city>
+			<country>Canada</country>
+		</countryPublished>
+		<bookCost>5</bookCost>
+	</bookInfo>
+</book>
+</books>
